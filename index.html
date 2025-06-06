@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G20 - Et si tout basculait en 48h ?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(220, 38, 38, 0.6);
+            }
+        }
+        
+        .animate-fade-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .animate-pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        .bg-gradient-dark {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
+        }
+        
+        .hero-bg {
+            background:  
+                        url('img/g20-film-1256x826.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-black/90 backdrop-blur-sm z-50 border-b border-gray-800 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-red-500 tracking-wider">
+                G<span class="text-white">20</span>
+            </div>
+            <ul class="hidden md:flex space-x-8 text-gray-300">
+                <li><a href="#accueil" class="hover:text-red-400 transition-colors duration-300">Accueil</a></li>
+                <li><a href="#apropos" class="hover:text-red-400 transition-colors duration-300">À propos</a></li>
+                <li><a href="#trailer" class="hover:text-red-400 transition-colors duration-300 font-medium">Voir bande-annonce</a></li>
+            </ul>
+            <button id="mobile-menu-btn" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-black/95 backdrop-blur-sm border-t border-gray-800">
+            <ul class="px-6 py-4 space-y-4">
+                <li><a href="#accueil" class="block text-gray-300 hover:text-red-400 transition-colors duration-300">Accueil</a></li>
+                <li><a href="#apropos" class="block text-gray-300 hover:text-red-400 transition-colors duration-300">À propos</a></li>
+                <li><a href="#trailer" class="block text-gray-300 hover:text-red-400 transition-colors duration-300 font-medium">Voir bande-annonce</a></li>
+            </ul>
+        </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/60"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-up">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Et si tout basculait
+                    <span class="block text-red-500 mt-2">en 48h ?</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Le destin d'un pays repose entre les mains d'une femme… 
+                    <span class="text-red-400">et d'un sommet mondial.</span>
+                </p>
+                <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
+                    <button class="animate-pulse-glow bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 block md:inline-block w-full md:w-auto">
+                        Voir la bande-annonce
+                    </button>
+                    <button class="border-2 border-white hover:bg-white hover:text-black text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105 block md:inline-block w-full md:w-auto">
+                        En savoir plus
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Synopsis Section -->
+    <section id="apropos" class="bg-gradient-dark py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8 text-red-500">G20</h2>
+                <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+                    Dans un monde en tension, les décisions prises en 48 heures peuvent sauver… 
+                    <span class="text-white font-semibold">ou détruire.</span>
+                </p>
+                <p class="text-lg text-gray-400 leading-relaxed">
+                    Le film <strong class="text-red-400">G20</strong>, sorti en 2025, plonge au cœur d'un sommet sous pression où les enjeux politiques se mélangent aux choix humains les plus profonds. Une expérience cinématographique qui questionne le pouvoir, la responsabilité et l'humanité face aux décisions qui façonnent notre monde.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi regarder Section -->
+    <section class="bg-black py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">
+                Pourquoi regarder <span class="text-red-500">G20</span> ?
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-red-500/50 transition-all duration-300 transform hover:-translate-y-2">
+                   
+                    <h3 class="text-2xl font-bold mb-4 text-red-400">Un scénario haletant</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Chaque minute compte dans cette course contre la montre où les négociations internationales deviennent un thriller psychologique intense.
+                    </p>
+                </div>
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-red-500/50 transition-all duration-300 transform hover:-translate-y-2">
+                    
+                    <h3 class="text-2xl font-bold mb-4 text-red-400">Un personnage principal puissant</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Une femme au centre du pouvoir mondial, confrontée à des choix impossibles qui révèlent la complexité du leadership moderne.
+                    </p>
+                </div>
+                <div class="bg-gray-900/50 p-8 rounded-xl border border-gray-800 hover:border-red-500/50 transition-all duration-300 transform hover:-translate-y-2">
+                   
+                    <h3 class="text-2xl font-bold mb-4 text-red-400">Un message qui dépasse la fiction</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Au-delà du divertissement, une réflexion profonde sur les enjeux géopolitiques qui façonnent notre époque.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section id="trailer" class="bg-gradient-to-r from-red-900/20 via-black to-red-900/20 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Prêt à découvrir <span class="text-red-500">G20</span> ?
+            </h2>
+            <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                Ne manquez pas le film qui redéfinit le thriller politique. 
+                L'avenir se joue maintenant.
+            </p>
+            <div class="space-y-4 md:space-y-0 md:space-x-6 md:flex md:justify-center">
+                <button class="animate-pulse-glow bg-red-600 hover:bg-red-700 text-white px-10 py-5 rounded-lg text-xl font-bold transition-all duration-300 transform hover:scale-105 shadow-2xl block md:inline-block w-full md:w-auto">
+                    Regarder maintenant
+                </button>
+                <button class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-10 py-5 rounded-lg text-xl font-semibold transition-all duration-300 transform hover:scale-105 border border-white/30 block md:inline-block w-full md:w-auto">
+                    Découvrir le film
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-2xl font-bold text-red-500 mb-4">G<span class="text-white">20</span></div>
+            <p class="text-gray-500 text-sm">
+                © 2025 G20 Le Film. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Fermer le menu mobile quand on clique sur un lien
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth scrolling pour les liens de navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer les éléments à animer
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+
+        // Effet parallaxe léger sur le hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-bg');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
